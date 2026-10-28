@@ -1,0 +1,169 @@
+@charset "UTF-8";
+
+@font-face {
+	font-display: swap;
+	font-family: 'Carlito';
+	font-style: normal;
+	font-weight: 400;
+	src: url('carlito-v4-latin-regular.woff2') format('woff2');
+}
+
+@font-face {
+	font-display: swap;
+	font-family: 'Carlito';
+	font-style: italic;
+	font-weight: 400;
+	src: url('carlito-v4-latin-italic.woff2') format('woff2');
+}
+
+@font-face {
+	font-display: swap;
+	font-family: 'Carlito';
+	font-style: normal;
+	font-weight: 700;
+	src: url('carlito-v4-latin-700.woff2') format('woff2');
+}
+
+@font-face {
+	font-display: swap;
+	font-family: 'Carlito';
+	font-style: italic;
+	font-weight: 700;
+	src: url('carlito-v4-latin-700italic.woff2') format('woff2');
+}
+
+:root {
+	--copy-color: #0F0F0F;
+	--bg-color: #FBFBFB;
+	--link-color: #006992;
+	--visited-link-color: #27476E;
+	--copy-font-weight: 400;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--copy-color: #FBFBFB;
+		--bg-color: #0F0F0F;
+		--link-color: #FFC857;
+		--visited-link-color: #E09600;
+		--copy-font-weight: 300;
+	}
+}
+
+*::selection {
+	color: var(--bg-color);
+	background: var(--copy-color);
+}
+
+html {
+	color-scheme: light dark;
+	color: var(--copy-color);
+	background: var(--bg-color);
+	font-size: 19px;
+	font-family: Carlito, sans-serif;
+	font-weight: var(--copy-font-weight);
+}
+
+body {
+	margin: 0 auto;
+	max-width: 50em;
+	hyphens: auto;
+}
+
+a:link {
+	color: var(--link-color);
+}
+
+a:link:focus,
+a:link:hover {
+	color: var(--bg-color);
+	background: var(--link-color);
+}
+
+a:visited {
+	color: var(--visited-link-color);
+}
+
+a:visited:focus,
+a:visited:hover {
+	color: var(--bg-color);
+	background: var(--visited-link-color);
+}
+
+h2 {
+	margin-block-end: 0.25em;
+}
+
+h2 + p {
+	margin-block-start: 0.25em;
+}
+
+figure.full-width {
+	width: 100%;
+}
+
+figure.quarter-width {
+	width: 25%;
+}
+
+figure.float-right {
+	float:right;
+}
+
+img {
+	width: 100%;
+}
+
+figcaption {
+	font-size: 0.75em;
+}
+
+#byline {
+	width: max-content;
+	border-inline-start: thick solid var(--copy-color);
+	padding-inline-start: 1em;
+}
+
+#byline ul {
+	padding-left: 0;
+	display: grid;
+	grid-template-areas:
+		"author author"
+		"pubdate pubdate"
+		"website github";
+	max-width:max-content;
+	column-gap: 0.25em;
+}
+
+#byline li {
+	list-style: none;
+}
+
+#byline-author {
+	grid-area: author;
+}
+
+#byline-pubdate {
+	grid-area: pubdate;
+}
+
+#byline-author-website {
+	grid-area: website;
+}
+
+#byline-author-website::after {
+	content: " | ";
+}
+
+#byline-author-github {
+	grid-area: github;
+}
+
+#lead-paragraph {
+	font-weight: bold;
+}
+
+.pull-quote {
+	color: darkred;
+	font-size: 1.5em;
+}
